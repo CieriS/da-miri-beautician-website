@@ -1,0 +1,20 @@
+{
+  "intro": {
+    "index": "03",
+    "eyebrow": "Galleria lavori",
+    "title": { "text": "Dettagli che", "accent": "parlano da soli." },
+    "description": "Una selezione di set realizzati in studio. Ognuno nasce da una consulenza: forma, colore e finish scelti insieme, sulla tua mano."
+  },
+  "lookCta": "Voglio questo look",
+  "lookAriaLabel": "Richiedi un look simile a {look}",
+  "carouselLabel": "Galleria lavori: scorri per vedere altri set",
+  "slideLabel": "Vai al lavoro {index} di {total}",
+  "items": [
+    { "id": "tortoise", "title": "Noir & Tartaruga", "technique": "Semipermanente", "image": "gallery-tortoise" },
+    { "id": "grey-glitter", "title": "Tortora Glitter", "technique": "Ricostruzione gel", "image": "gallery-grey-glitter" },
+    { "id": "love-letter", "title": "Love Letter", "technique": "Nail art", "image": "gallery-love-letter" },
+    { "id": "nude-sparkle", "title": "Nude Sparkle", "technique": "Semip. rinforzato", "image": "gallery-nude-sparkle" },
+    { "id": "pop-abstract", "title": "Pop Abstract", "technique": "Nail art a mano", "image": "gallery-pop-abstract" },
+    { "id": "bordeaux-glitter", "title": "Bordeaux Accent", "technique": "Ricostruzione gel", "image": "gallery-bordeaux-glitter" }
+  ]
+}

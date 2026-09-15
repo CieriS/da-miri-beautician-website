@@ -1,0 +1,45 @@
+{
+  "brand": "Da Miri",
+  "logo": { "text": "Da", "accent": "Miri" },
+  "owner": "Miriana Rossetti",
+  "role": "Onicotecnica & Estetista",
+  "url": "http://localhost:3000",
+  "locale": "it_IT",
+  "seo": {
+    "title": "Da Miri — Manicure e onicotecnica in studio privato",
+    "description": "Da Miri è l'home studio di onicotecnica di Miriana Rossetti: manicure russa, ricostruzione gel, semipermanente rinforzato e nail art personalizzata. Una cliente alla volta, solo su appuntamento.",
+    "keywords": [
+      "onicotecnica",
+      "manicure russa",
+      "ricostruzione unghie gel",
+      "semipermanente rinforzato",
+      "nail art",
+      "home studio unghie",
+      "Da Miri",
+      "Miriana Rossetti"
+    ]
+  },
+  "whatsapp": {
+    "number": "390000000000",
+    "messages": {
+      "default": "Ciao Miriana! Ho visto il sito di Da Miri e vorrei prenotare un appuntamento.",
+      "service": "Ciao Miriana! Vorrei prenotare un appuntamento per: {service}. Quando hai disponibilità?",
+      "look": "Ciao Miriana! Ho visto il lavoro \"{look}\" nella galleria e vorrei qualcosa di simile.",
+      "advice": "Ciao Miriana! Vorrei un consiglio su quale trattamento scegliere per le mie unghie."
+    }
+  },
+  "location": {
+    "area": "Zona Centro",
+    "city": "Città",
+    "countryCode": "IT",
+    "note": "Studio privato: l'indirizzo esatto ti viene inviato alla conferma dell'appuntamento."
+  },
+  "hours": [
+    { "days": "Lunedì — Venerdì", "time": "9:30 — 19:30" },
+    { "days": "Sabato", "time": "9:30 — 14:00" },
+    { "days": "Domenica", "time": "Chiuso" }
+  ],
+  "instagramUrl": null,
+  "vatNumber": "00000000000",
+  "priceRange": "€€"
+}

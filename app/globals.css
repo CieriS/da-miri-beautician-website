@@ -1,0 +1,487 @@
+@import "tailwindcss";
+
+/*
+ * Dark mode guidata da next-themes (attribute="class"): la classe `.dark`
+ * viene applicata su <html> e abilita la variante `dark:` di Tailwind.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Solo dispositivi con puntatore preciso: gli effetti "rivela in hover"
+ * restano sempre visibili su touch screen.
+ */
+@custom-variant can-hover {
+  @media (hover: hover) and (pointer: fine) {
+    @slot;
+  }
+}
+
+/* ───────────────────────── Design tokens · Light ───────────────────────── */
+:root {
+  --background: #fafafa;
+  --foreground: #171717;
+  --accent: #d4a373; /* Nude / Blush */
+  --surface: #ffffff; /* Superfici elevate */
+
+  /* Derivati */
+  --accent-ink: #8c5e34; /* Accento leggibile per testi piccoli (contrasto AA) */
+  --accent-foreground: #171717; /* Testo sopra superfici accento */
+  --muted: color-mix(in oklab, var(--foreground) 64%, var(--background));
+  --border: color-mix(in oklab, var(--foreground) 11%, transparent);
+
+  /* Color grading immagini mockup */
+  --image-filter: saturate(0.82) sepia(0.08) contrast(1.02) brightness(1);
+  --image-filter-hover: saturate(1) sepia(0) contrast(1) brightness(1);
+  --image-overlay: linear-gradient(
+    to top,
+    color-mix(in oklab, var(--accent) 22%, transparent),
+    transparent 70%
+  );
+  --image-overlay-blend: soft-light;
+
+  /* Animazioni a tema: pennellata, riflesso top coat, glitter */
+  --brush-stroke: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100' preserveAspectRatio='none'%3E%3Cpath d='M6 72C62 64 150 61 232 63s128 4 162-1c5 5 3 13-4 16-56 9-142 9-210 9S46 92 12 91C3 89 0 78 6 72z' fill='%23d4a373' fill-opacity='.42'/%3E%3Cpath d='M44 71c84-5 192-6 296-3' fill='none' stroke='%23fff' stroke-opacity='.6' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  --gloss-strong: rgb(255 255 255 / 0.55);
+  --gloss-soft: rgb(255 255 255 / 0.16);
+  --glitter-a: #f6e3cc;
+  --glitter-b: #c28a55;
+}
+
+/* ───────────────────────── Design tokens · Dark ────────────────────────── */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --accent: #e6ccb2; /* Soft Rose Gold */
+  --surface: #1a1a1a;
+
+  --accent-ink: #e6ccb2;
+  --accent-foreground: #0a0a0a;
+
+  --image-filter: saturate(0.68) sepia(0.1) contrast(1.06) brightness(0.8);
+  --image-filter-hover: saturate(0.95) sepia(0) contrast(1.02) brightness(0.94);
+  --image-overlay: linear-gradient(
+    to top,
+    rgb(10 10 10 / 0.45),
+    color-mix(in oklab, var(--accent) 8%, transparent)
+  );
+  --image-overlay-blend: normal;
+
+  --brush-stroke: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100' preserveAspectRatio='none'%3E%3Cpath d='M6 72C62 64 150 61 232 63s128 4 162-1c5 5 3 13-4 16-56 9-142 9-210 9S46 92 12 91C3 89 0 78 6 72z' fill='%23e6ccb2' fill-opacity='.26'/%3E%3Cpath d='M44 71c84-5 192-6 296-3' fill='none' stroke='%23fff' stroke-opacity='.22' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  --gloss-strong: rgb(255 244 232 / 0.3);
+  --gloss-soft: rgb(255 244 232 / 0.08);
+  --glitter-a: #fff6ea;
+  --glitter-b: #e6ccb2;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+
+  /* Uscita morbida e sovrasmorzata */
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Gesto del pennello: partenza e arrivo lenti, stesura decisa al centro */
+  --ease-brush: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ───────────────────────────── Tipografia ──────────────────────────────── */
+@utility text-display-xl {
+  font-size: clamp(2.5rem, 1rem + 6.2vw, 7rem);
+  line-height: 0.98;
+  letter-spacing: -0.028em;
+}
+
+@utility text-display-lg {
+  font-size: clamp(2.25rem, 1.2rem + 4.6vw, 5.75rem);
+  line-height: 1;
+  letter-spacing: -0.024em;
+}
+
+@utility text-display-md {
+  font-size: clamp(2rem, 1.3rem + 2.9vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+/* ─────────────────────────────── Base ──────────────────────────────────── */
+@layer base {
+  html {
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  a,
+  button,
+  summary {
+    touch-action: manipulation;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* ──────────────────────── Immagini: color grading ──────────────────────── */
+  .graded-image {
+    filter: var(--image-filter);
+    transition:
+      filter 0.9s var(--ease-soft),
+      scale 1.4s var(--ease-soft);
+  }
+
+  .graded-overlay {
+    background: var(--image-overlay);
+    mix-blend-mode: var(--image-overlay-blend);
+    transition: opacity 0.9s var(--ease-soft);
+  }
+
+  /* ─────────────── Rivelazione allo scroll (components/ui/reveal.tsx) ───────────────
+   * Nessuno stile nasconde contenuti senza JavaScript: `data-reveal` viene impostato
+   * solo dopo l'idratazione e solo sui blocchi fuori schermo. */
+  [data-reveal="hidden"] [data-reveal-item],
+  [data-reveal="hidden"][data-reveal-self] {
+    opacity: 0;
+    transform: translate3d(0, 1.75rem, 0);
+  }
+
+  [data-reveal="visible"] [data-reveal-item],
+  [data-reveal="visible"][data-reveal-self] {
+    transition:
+      opacity 0.9s var(--ease-soft),
+      transform 1.1s var(--ease-soft);
+    transition-delay: calc(var(--reveal-i, 0) * 90ms);
+  }
+
+  /* Nei caroselli mobile gli elementi entrano di lato, senza creare overflow verticale. */
+  @media (max-width: 47.99rem) {
+    .carousel-track[data-reveal="hidden"] > [data-reveal-item] {
+      transform: translate3d(2.5rem, 0, 0);
+    }
+  }
+
+  /* ─────────────────────────── Ingresso della hero ─────────────────────────── */
+  .hero-rise {
+    animation: rise 1s var(--ease-soft) both;
+    animation-delay: calc(var(--i, 0) * 110ms + 60ms);
+  }
+
+  .menu-rise {
+    animation: rise 0.7s var(--ease-soft) both;
+    animation-delay: calc(var(--i, 0) * 60ms + 60ms);
+  }
+
+  /* ─────────── Pennellata di smalto sotto le parole in evidenza ─────────── */
+  .brush-accent {
+    background-image: var(--brush-stroke);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 100% 100%;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding-inline: 0.06em;
+    margin-inline: -0.06em;
+  }
+
+  .hero-rise .brush-accent {
+    animation: brush-in 1.2s var(--ease-brush) both;
+    animation-delay: calc(var(--i, 0) * 110ms + 700ms);
+  }
+
+  [data-reveal="hidden"] .brush-accent {
+    background-size: 0% 100%;
+  }
+
+  [data-reveal="visible"] .brush-accent {
+    transition: background-size 1.2s var(--ease-brush);
+    transition-delay: calc(var(--reveal-i, 0) * 90ms + 450ms);
+  }
+
+  /* ──────────────── Illustrazioni line-art e logo: tracciati disegnati ──────────────── */
+  .draw-path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+  }
+
+  [data-reveal="hidden"] .draw-path {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+
+  [data-reveal="visible"] .draw-path {
+    transition:
+      stroke-dashoffset 1.4s var(--ease-brush),
+      opacity 0.01s linear;
+    transition-delay: calc(var(--draw-i, 0) * 160ms + 150ms);
+  }
+
+  .logo-swash {
+    stroke-dasharray: 1;
+    animation: draw-in 1s var(--ease-brush) 0.5s both;
+  }
+
+  /* ─────────────────────── Riflesso "top coat" ─────────────────────── */
+  .gloss-sweep {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .gloss-sweep::before {
+    content: "";
+    position: absolute;
+    inset: -20% -60%;
+    background: linear-gradient(
+      105deg,
+      transparent 38%,
+      var(--gloss-strong) 48%,
+      var(--gloss-soft) 53%,
+      transparent 62%
+    );
+    opacity: 0;
+    translate: -70% 0;
+  }
+
+  /* ───────────────────────── Glitter sulle CTA ───────────────────────── */
+  .glitter {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s var(--ease-soft);
+  }
+
+  .glitter-particle {
+    position: absolute;
+    translate: -50% -50%;
+    background: linear-gradient(135deg, var(--glitter-a), var(--glitter-b));
+    clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+    opacity: 0;
+    scale: 0;
+    animation: twinkle 1.6s var(--ease-soft) infinite paused;
+  }
+
+  /* Variante per mobile: scintilla da sola, a intervalli lunghi e discreti. */
+  .glitter--ambient {
+    opacity: 1;
+  }
+
+  .glitter--ambient .glitter-particle {
+    animation-name: twinkle-ambient;
+    animation-duration: 4.2s;
+    animation-play-state: running;
+  }
+
+  /* ───────────────── Servizi su mobile: fisarmonica animata ───────────────── */
+  @supports selector(::details-content) {
+    .service-accordion::details-content {
+      block-size: 0;
+      overflow-y: clip;
+      transition:
+        block-size 0.55s var(--ease-soft),
+        content-visibility 0.55s allow-discrete;
+    }
+
+    .service-accordion[open]::details-content {
+      block-size: auto;
+    }
+  }
+
+  /* ─────────────── Hover: solo con puntatore preciso, senza "Riduci movimento" ─────────────── */
+  @media (hover: hover) and (pointer: fine) {
+    .group:hover .graded-image[data-interactive="true"] {
+      filter: var(--image-filter-hover);
+      scale: 1.045;
+    }
+
+    .group:hover .graded-overlay[data-interactive="true"] {
+      opacity: 0.35;
+    }
+
+    .logo-link:hover .logo-swash {
+      animation: draw-in-again 0.8s var(--ease-brush) both;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .group:hover .gloss-sweep::before {
+      opacity: 1;
+      translate: 70% 0;
+      transition:
+        translate 1.3s var(--ease-soft),
+        opacity 0.2s linear;
+    }
+
+    .group:hover .glitter,
+    .group:focus-visible .glitter {
+      opacity: 1;
+    }
+
+    .group:hover .glitter-particle,
+    .group:focus-visible .glitter-particle {
+      animation-play-state: running;
+    }
+  }
+
+  /* ─────────── Touch: il riflesso passa da solo quando la foto compare ─────────── */
+  @media (hover: none) and (prefers-reduced-motion: no-preference) {
+    [data-reveal="visible"] .gloss-sweep::before,
+    .hero-sheen .gloss-sweep::before {
+      animation: gloss-pass 1.8s var(--ease-soft) both;
+      animation-delay: calc(var(--reveal-i, 0) * 120ms + 700ms);
+    }
+  }
+
+  /* ─────────────────────────── Riduci movimento ─────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-rise,
+    .menu-rise {
+      animation-name: fade;
+    }
+
+    [data-reveal="hidden"] [data-reveal-item],
+    [data-reveal="hidden"][data-reveal-self],
+    .carousel-track[data-reveal="hidden"] > [data-reveal-item] {
+      transform: none;
+    }
+
+    .glitter--ambient {
+      display: none;
+    }
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.5rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes brush-in {
+  from {
+    background-size: 0% 100%;
+  }
+  to {
+    background-size: 100% 100%;
+  }
+}
+
+@keyframes draw-in {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Nome diverso da `draw-in` per far ripartire l'animazione in hover. */
+@keyframes draw-in-again {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes gloss-pass {
+  0% {
+    opacity: 0;
+    translate: -70% 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    translate: 70% 0;
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    scale: 0;
+    rotate: 0deg;
+  }
+  40% {
+    opacity: 1;
+    scale: 1;
+    rotate: 45deg;
+  }
+  70% {
+    opacity: 0.7;
+    scale: 0.55;
+    rotate: 90deg;
+  }
+}
+
+@keyframes twinkle-ambient {
+  0%,
+  34%,
+  100% {
+    opacity: 0;
+    scale: 0;
+    rotate: 0deg;
+  }
+  12% {
+    opacity: 1;
+    scale: 1;
+    rotate: 45deg;
+  }
+  22% {
+    opacity: 0.6;
+    scale: 0.5;
+    rotate: 90deg;
+  }
+}

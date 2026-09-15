@@ -1,0 +1,19 @@
+{
+  "links": [
+    { "label": "Studio", "href": "#studio" },
+    { "label": "Trattamenti", "href": "#servizi" },
+    { "label": "Lavori", "href": "#lavori" },
+    { "label": "Recensioni", "href": "#recensioni" },
+    { "label": "Contatti", "href": "#contatti" }
+  ],
+  "bookingLabel": "Prenota ora",
+  "mobileBookingLabel": "Prenota su WhatsApp",
+  "labels": {
+    "home": "{brand} — torna all'inizio",
+    "mainNav": "Navigazione principale",
+    "mobileNav": "Navigazione mobile",
+    "openMenu": "Apri menu",
+    "closeMenu": "Chiudi menu",
+    "themeToggle": "Cambia tema chiaro o scuro"
+  }
+}

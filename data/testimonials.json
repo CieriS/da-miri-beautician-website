@@ -1,0 +1,45 @@
+{
+  "intro": {
+    "index": "04",
+    "eyebrow": "Recensioni",
+    "title": { "text": "Mani curate,", "accent": "clienti che tornano." },
+    "description": "Tenuta nel tempo e cura del dettaglio: è ciò che le clienti di Da Miri notano per primo."
+  },
+  "ratingLabel": "Valutazione: {rating} stelle su 5",
+  "carouselLabel": "Recensioni: scorri per leggerne altre",
+  "slideLabel": "Vai alla recensione {index} di {total}",
+  "items": [
+    {
+      "id": "giulia",
+      "quote": "Il semipermanente rinforzato mi è durato quattro settimane piene, senza un solo sollevamento. E finalmente un'ora tutta per me.",
+      "name": "Giulia M.",
+      "treatment": "Semipermanente Rinforzato",
+      "highlight": "4 settimane",
+      "rating": 5
+    },
+    {
+      "id": "francesca",
+      "quote": "Una precisione quasi maniacale sulle cuticole. La manicure russa più pulita che abbia mai fatto, e si vede anche dopo giorni.",
+      "name": "Francesca L.",
+      "treatment": "Manicure Russa",
+      "highlight": "Precisione",
+      "rating": 5
+    },
+    {
+      "id": "sara",
+      "quote": "Venivo da anni di gel spessi e unghie rovinate. Con Miriana sono sottili, naturali e resistenti: non torno più indietro.",
+      "name": "Sara P.",
+      "treatment": "Ricostruzione Gel",
+      "highlight": "Unghie sane",
+      "rating": 5
+    },
+    {
+      "id": "chiara",
+      "quote": "Le ho mostrato una foto e l'ha resa ancora più bella. Ogni dettaglio della nail art era perfettamente simmetrico.",
+      "name": "Chiara D.",
+      "treatment": "Nail Art Personalizzata",
+      "highlight": "Cura del dettaglio",
+      "rating": 5
+    }
+  ]
+}

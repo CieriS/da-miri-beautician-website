@@ -1,0 +1,20 @@
+{
+  "eyebrow": "Home studio di onicotecnica",
+  "title": {
+    "text": "L'Arte della Manicure,",
+    "accent": "nel Tuo Spazio Privato."
+  },
+  "subtitle": "Precisione tecnica ed estetica sartoriale in un ambiente esclusivo, pensato solo per te. Dimentica l'attesa dei saloni affollati.",
+  "primaryCta": { "label": "Scopri i trattamenti", "href": "#servizi" },
+  "secondaryCta": { "label": "Vedi i lavori", "href": "#lavori" },
+  "facts": [
+    { "label": "Per volta", "value": "1 cliente" },
+    { "label": "Strumenti", "value": "Sterilizzati" },
+    { "label": "Accesso", "value": "Su appuntamento" }
+  ],
+  "image": "hero",
+  "portrait": {
+    "image": "portrait",
+    "caption": "Fondatrice di {brand}"
+  }
+}

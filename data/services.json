@@ -1,0 +1,56 @@
+{
+  "intro": {
+    "index": "02",
+    "eyebrow": "Trattamenti & prezzi",
+    "title": { "text": "Quattro rituali,", "accent": "un solo standard." },
+    "description": "Ogni trattamento parte da una preparazione meticolosa dell'unghia naturale. Scopri cosa include ciascuno e il prezzo di partenza, poi prenota con un messaggio."
+  },
+  "labels": {
+    "priceFrom": "A partire da",
+    "priceFromShort": "da",
+    "book": "Prenota",
+    "bookService": "Prenota {service}",
+    "includes": "Cosa include"
+  },
+  "footnote": "Prezzi di partenza indicativi: il preventivo finale dipende da lunghezza, forma e complessità del design. Non sai cosa scegliere? Ti consiglio io.",
+  "adviceCta": "Chiedi un consiglio",
+  "items": [
+    {
+      "id": "manicure-russa",
+      "name": "Manicure Russa",
+      "tagline": "La base di ogni mano curata",
+      "description": "Tecnica dry a fresa per una cuticola pulita al millimetro e un effetto ordinato che dura settimane.",
+      "duration": "60 minuti",
+      "priceFrom": 30,
+      "details": ["Preparazione dry a fresa", "Cuticola pulita al millimetro", "Trattamento nutriente finale"]
+    },
+    {
+      "id": "ricostruzione-gel",
+      "name": "Ricostruzione Gel",
+      "tagline": "Forma e lunghezza su misura",
+      "description": "Allungamento con cartine e costruzione in gel per unghie sottili, resistenti e dall'aspetto naturale.",
+      "duration": "120 minuti",
+      "priceFrom": 55,
+      "details": ["Studio di forma e lunghezza", "Struttura sottile e resistente", "Colore o french inclusi"]
+    },
+    {
+      "id": "semipermanente-rinforzato",
+      "name": "Semipermanente Rinforzato",
+      "tagline": "Colore impeccabile, più a lungo",
+      "description": "Una base rinforzante sotto il colore: più tenuta, niente sollevamenti e unghia naturale protetta.",
+      "duration": "75 minuti",
+      "priceFrom": 35,
+      "details": ["Manicure russa inclusa", "Base rubber livellante", "Palette di colori premium"]
+    },
+    {
+      "id": "nail-art",
+      "name": "Nail Art Personalizzata",
+      "tagline": "Il tuo dettaglio distintivo",
+      "description": "Dal minimal chic ai design più ricercati: ogni decorazione è disegnata a mano e pensata per te.",
+      "duration": "Da 15 minuti",
+      "priceFrom": 5,
+      "priceNote": "/ unghia",
+      "details": ["Consulenza sul design", "Disegno a mano libera", "Cromature, foil e micro-dettagli"]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "intro": {
+    "index": "01",
+    "eyebrow": "Perché uno studio privato?",
+    "title": { "text": "Non un salone.", "accent": "Il tuo momento." },
+    "description": "Da Miri nasce da un'idea semplice: la cura delle mani merita calma, attenzione e silenzio. Niente postazioni in fila né conversazioni incrociate, solo il tempo che serve per fare le cose bene."
+  },
+  "image": "studio",
+  "imageCaption": {
+    "label": "Lo studio · {area}",
+    "note": "Una cliente alla volta"
+  },
+  "items": [
+    {
+      "id": "igiene",
+      "icon": "shield-check",
+      "title": "Igiene Clinica",
+      "highlight": "Sterilizzazione in autoclave",
+      "description": "Strumentazione sterilizzata in autoclave e conservata in buste sigillate, aperte solo davanti a te. Lime e buffer sono monouso."
+    },
+    {
+      "id": "esclusivita",
+      "icon": "gem",
+      "title": "Esclusività",
+      "highlight": "Una cliente alla volta",
+      "description": "Una cliente alla volta, zero distrazioni. Nessuna attesa e nessun via vai: il tempo del tuo appuntamento è dedicato soltanto a te."
+    },
+    {
+      "id": "prodotti",
+      "icon": "sparkles",
+      "title": "Prodotti Premium",
+      "highlight": "Solo fascia alta",
+      "description": "Solo resine, gel e smalti di fascia alta, selezionati per tenuta, brillantezza e rispetto dell'unghia naturale."
+    }
+  ]
+}

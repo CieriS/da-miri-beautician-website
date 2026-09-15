@@ -1,0 +1,41 @@
+{
+  "hero": {
+    "src": "https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=2000&q=80",
+    "alt": "Mani con unghie a mandorla color nude appoggiate su un tessuto morbido",
+    "position": "40% 50%"
+  },
+  "portrait": {
+    "src": "https://images.unsplash.com/photo-1604902396830-aca29e19b067?auto=format&fit=crop&w=400&q=80",
+    "alt": "Dettaglio di unghie rosa cipria"
+  },
+  "studio": {
+    "src": "https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=1400&q=80",
+    "alt": "Onicotecnica al lavoro durante una ricostruzione in gel"
+  },
+  "gallery-tortoise": {
+    "src": "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1000&q=80",
+    "alt": "Unghie corte nere lucide alternate a effetto tartaruga"
+  },
+  "gallery-grey-glitter": {
+    "src": "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=1000&q=80",
+    "alt": "Unghie squadrate grigio tortora, bianco latte e glitter argento"
+  },
+  "gallery-love-letter": {
+    "src": "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=1000&q=80",
+    "alt": "Unghie a mandorla rosse con scritta love dipinta a mano",
+    "position": "50% 40%"
+  },
+  "gallery-nude-sparkle": {
+    "src": "https://images.unsplash.com/photo-1587729927069-ef3b7a5ab9b4?auto=format&fit=crop&w=1000&q=80",
+    "alt": "Unghie nude con un accento decorato a glitter"
+  },
+  "gallery-pop-abstract": {
+    "src": "https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?auto=format&fit=crop&w=1000&q=80",
+    "alt": "Nail art astratta multicolore dipinta a mano"
+  },
+  "gallery-bordeaux-glitter": {
+    "src": "https://images.unsplash.com/photo-1588359953494-0c215e3cedc6?auto=format&fit=crop&w=1000&q=80",
+    "alt": "Unghie nude con dettaglio glitter bordeaux accanto a piante grasse",
+    "position": "60% 50%"
+  }
+}

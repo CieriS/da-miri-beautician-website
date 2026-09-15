@@ -1,0 +1,34 @@
+{
+  "intro": {
+    "index": "05",
+    "eyebrow": "Prenotazioni",
+    "title": { "text": "Pronta per valorizzare", "accent": "le tue mani?" },
+    "description": "Scrivimi su WhatsApp: rispondo personalmente e troviamo insieme il giorno e l'orario perfetti per te."
+  },
+  "primaryCta": "Prenota su WhatsApp",
+  "hours": {
+    "title": "Orari",
+    "headline": "Solo su appuntamento"
+  },
+  "address": {
+    "title": "Indirizzo",
+    "headline": "{area}, {city}"
+  },
+  "quickContact": {
+    "title": "Contatto rapido",
+    "text": "Un messaggio e ti rispondo appena termino con la cliente in studio.",
+    "cta": "Scrivi su WhatsApp"
+  },
+  "map": {
+    "ariaLabel": "Mappa indicativa della zona dello studio: {area}, {city}",
+    "title": "{brand} · {area}",
+    "caption": "{city} — posizione indicativa",
+    "badge": "Home studio"
+  },
+  "footer": {
+    "copyright": "© {year} {brand} di {owner} · P.IVA {vatNumber}",
+    "backToTop": "Torna su",
+    "instagram": "Instagram",
+    "navLabel": "Link footer"
+  }
+}
