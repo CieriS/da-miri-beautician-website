@@ -556,3 +556,7 @@ Le variabili `NEXT_PUBLIC_*` si leggono a build time: rifai il deploy.
 
 **Glitter e riflessi non si vedono**
 Sono effetti di hover: non compaiono su touch screen né con "Riduci movimento" attivo, per scelta.
+
+## Git hooks
+
+`.githooks/pre-push` runs before every push: a secret scan of the outgoing commits (gitleaks, or its Docker image when the binary is missing) and then the fast checks (`bun run lint`). It is enabled on install by the `prepare` script. Skip it once with `git push --no-verify`. On CI, `.github/workflows/secret-scan.yml` scans the whole history of every branch and tag.
